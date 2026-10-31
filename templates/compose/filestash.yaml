@@ -1,0 +1,45 @@
+# documentation: https://www.filestash.app/docs/
+# slogan: A modern web client for S3, SFTP, FTP, WebDAV, Git, Dropbox and many other storage backends, with built-in office document editing.
+# category: storage
+# tags: file-manager, file-browser, s3, sftp, ftp, webdav, storage, collabora, office
+# logo: svgs/filestash.svg
+# port: 8334
+
+services:
+  filestash:
+    # Open the Filestash URL right after deploying: the first visitor sets the admin password at /admin.
+    image: machines/filestash:latest
+    environment:
+      - SERVICE_URL_FILESTASH_8334
+      - APPLICATION_URL=${SERVICE_FQDN_FILESTASH}
+      - CANARY=true
+      - OFFICE_URL=http://collabora:9980
+      - OFFICE_FILESTASH_URL=http://filestash:8334
+      - OFFICE_REWRITE_URL=${SERVICE_URL_COLLABORA}
+    volumes:
+      - filestash-state:/app/data/state/
+    depends_on:
+      collabora:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "curl", "-fsS", "-o", "/dev/null", "http://127.0.0.1:8334/healthz"]
+      interval: 10s
+      timeout: 10s
+      retries: 10
+      start_period: 15s
+
+  collabora:
+    # Office editor used by Filestash. The browser loads it from its own domain, so keep the generated Collabora URL.
+    # Coolify's proxy terminates TLS. If you serve Collabora over plain HTTP, change ssl.termination to false.
+    # Stay on 25.04: Filestash picks the last discovery action, and 26.04 adds a read-only preview action that it would open instead of the editor.
+    image: collabora/code:25.04.10.3.1
+    environment:
+      - SERVICE_URL_COLLABORA_9980
+      - "extra_params=--o:net.frame_ancestors=${SERVICE_FQDN_FILESTASH} ${COLLABORA_EXTRA_PARAMS:---o:ssl.enable=false --o:ssl.termination=true}"
+      - aliasgroup1=http://filestash:8334
+    healthcheck:
+      test: ["CMD", "curl", "-fsS", "-o", "/dev/null", "http://127.0.0.1:9980/hosting/discovery"]
+      interval: 10s
+      timeout: 10s
+      retries: 15
+      start_period: 30s

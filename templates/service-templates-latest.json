@@ -1548,6 +1548,27 @@
         "template_last_updated_at": "2025-08-17T18:23:57+02:00",
         "port": "5000"
     },
+    "filestash": {
+        "documentation": "https://www.filestash.app/docs/?utm_source=coolify.io",
+        "slogan": "A modern web client for S3, SFTP, FTP, WebDAV, Git, Dropbox and many other storage backends, with built-in office document editing.",
+        "compose": "c2VydmljZXM6CiAgZmlsZXN0YXNoOgogICAgaW1hZ2U6ICdtYWNoaW5lcy9maWxlc3Rhc2g6bGF0ZXN0JwogICAgZW52aXJvbm1lbnQ6CiAgICAgIC0gU0VSVklDRV9VUkxfRklMRVNUQVNIXzgzMzQKICAgICAgLSAnQVBQTElDQVRJT05fVVJMPSR7U0VSVklDRV9GUUROX0ZJTEVTVEFTSH0nCiAgICAgIC0gQ0FOQVJZPXRydWUKICAgICAgLSAnT0ZGSUNFX1VSTD1odHRwOi8vY29sbGFib3JhOjk5ODAnCiAgICAgIC0gJ09GRklDRV9GSUxFU1RBU0hfVVJMPWh0dHA6Ly9maWxlc3Rhc2g6ODMzNCcKICAgICAgLSAnT0ZGSUNFX1JFV1JJVEVfVVJMPSR7U0VSVklDRV9VUkxfQ09MTEFCT1JBfScKICAgIHZvbHVtZXM6CiAgICAgIC0gJ2ZpbGVzdGFzaC1zdGF0ZTovYXBwL2RhdGEvc3RhdGUvJwogICAgZGVwZW5kc19vbjoKICAgICAgY29sbGFib3JhOgogICAgICAgIGNvbmRpdGlvbjogc2VydmljZV9oZWFsdGh5CiAgICBoZWFsdGhjaGVjazoKICAgICAgdGVzdDoKICAgICAgICAtIENNRAogICAgICAgIC0gY3VybAogICAgICAgIC0gJy1mc1MnCiAgICAgICAgLSAnLW8nCiAgICAgICAgLSAvZGV2L251bGwKICAgICAgICAtICdodHRwOi8vMTI3LjAuMC4xOjgzMzQvaGVhbHRoeicKICAgICAgaW50ZXJ2YWw6IDEwcwogICAgICB0aW1lb3V0OiAxMHMKICAgICAgcmV0cmllczogMTAKICAgICAgc3RhcnRfcGVyaW9kOiAxNXMKICBjb2xsYWJvcmE6CiAgICBpbWFnZTogJ2NvbGxhYm9yYS9jb2RlOjI1LjA0LjEwLjMuMScKICAgIGVudmlyb25tZW50OgogICAgICAtIFNFUlZJQ0VfVVJMX0NPTExBQk9SQV85OTgwCiAgICAgIC0gJ2V4dHJhX3BhcmFtcz0tLW86bmV0LmZyYW1lX2FuY2VzdG9ycz0ke1NFUlZJQ0VfRlFETl9GSUxFU1RBU0h9ICR7Q09MTEFCT1JBX0VYVFJBX1BBUkFNUzotLS1vOnNzbC5lbmFibGU9ZmFsc2UgLS1vOnNzbC50ZXJtaW5hdGlvbj10cnVlfScKICAgICAgLSAnYWxpYXNncm91cDE9aHR0cDovL2ZpbGVzdGFzaDo4MzM0JwogICAgaGVhbHRoY2hlY2s6CiAgICAgIHRlc3Q6CiAgICAgICAgLSBDTUQKICAgICAgICAtIGN1cmwKICAgICAgICAtICctZnNTJwogICAgICAgIC0gJy1vJwogICAgICAgIC0gL2Rldi9udWxsCiAgICAgICAgLSAnaHR0cDovLzEyNy4wLjAuMTo5OTgwL2hvc3RpbmcvZGlzY292ZXJ5JwogICAgICBpbnRlcnZhbDogMTBzCiAgICAgIHRpbWVvdXQ6IDEwcwogICAgICByZXRyaWVzOiAxNQogICAgICBzdGFydF9wZXJpb2Q6IDMwcwo=",
+        "tags": [
+            "file-manager",
+            "file-browser",
+            "s3",
+            "sftp",
+            "ftp",
+            "webdav",
+            "storage",
+            "collabora",
+            "office"
+        ],
+        "category": "storage",
+        "logo": "svgs/filestash.svg",
+        "minversion": "0.0.0",
+        "template_last_updated_at": null,
+        "port": "8334"
+    },
     "firefly": {
         "documentation": "https://firefly-iii.org?utm_source=coolify.io",
         "slogan": "A personal finances manager that can help you save money.",
